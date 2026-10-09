@@ -3,7 +3,7 @@
   "name": "dedsafio-extremo",
   "version": "1.0.0",
   "private": true,
-  "description": "Sistema de registro y verificacion de Minecraft y Discord",
+  "description": "Registro y verificacion de Dedsafio Extremo",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -14,6 +14,8 @@
   "dependencies": {
     "express": "^5.1.0",
     "pg": "^8.16.3",
-    "dotenv": "^16.6.1"
+    "dotenv": "^16.6.1",
+    "bcryptjs": "^3.0.2",
+    "express-rate-limit": "^8.1.0"
   }
 }
