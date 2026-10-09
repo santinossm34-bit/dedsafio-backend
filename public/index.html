@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <title>Dedsafio Extremo | Registro</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px 14px;
+      display: grid;
+      place-items: center;
+      background: #090b10;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      width: 100%;
+      max-width: 430px;
+      padding: 28px;
+      border: 1px solid #292d36;
+      border-radius: 18px;
+      background: #11151d;
+      box-shadow: 0 20px 60px #0006;
+    }
+    .logo {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: #e8b647;
+      color: #17130a;
+      font-size: 25px;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+    .tag {
+      color: #e8b647;
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+    h1 { font-size: 27px; margin: 9px 0; }
+    .description {
+      color: #9ca5b5;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+    label {
+      display: block;
+      margin: 16px 0 7px;
+      font-size: 13px;
+      color: #d8dce4;
+    }
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #343b49;
+      border-radius: 9px;
+      outline: none;
+      background: #0b0e14;
+      color: white;
+      font-size: 14px;
+    }
+    input:focus { border-color: #e8b647; }
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 22px;
+      border: 0;
+      border-radius: 9px;
+      background: #e8b647;
+      color: #17130a;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    #message {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #e8b647;
+      margin-top: 14px;
+    }
+    .footer {
+      color: #737d8e;
+      font-size: 11px;
+      text-align: center;
+      margin-top: 22px;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="logo">DE</div>
+    <div class="tag">MINECRAFT JAVA · 1.20.1</div>
+    <h1>Crear una cuenta</h1>
+    <p class="description">
+      Regístrate en Dedsafio Extremo para vincular tu cuenta
+      de Minecraft con tu identidad de Discord.
+    </p>
+
+    <form id="registerForm">
+      <label for="minecraft">Usuario de Minecraft</label>
+      <input id="minecraft" name="minecraft" required
+        minlength="3" maxlength="16" pattern="[A-Za-z0-9_]+"
+        placeholder="TuNombreMinecraft" autocomplete="username">
+
+      <label for="discord">Usuario de Discord</label>
+      <input id="discord" name="discord" required maxlength="50"
+        placeholder="Tu usuario de Discord">
+
+      <label for="email">Correo electrónico</label>
+      <input id="email" name="email" type="email" required
+        maxlength="254" placeholder="tu@correo.com"
+        autocomplete="email">
+
+      <label for="password">Contraseña</label>
+      <input id="password" name="password" type="password"
+        required minlength="12" maxlength="128"
+        placeholder="Mínimo 12 caracteres"
+        autocomplete="new-password">
+
+      <button type="submit">Crear cuenta</button>
+      <p id="message" role="status"></p>
+    </form>
+
+    <div class="footer">
+      DEDSAFIO EXTREMO · SISTEMA DE CUENTAS
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById("registerForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      message.textContent = "El registro aún no está conectado al servidor.";
+    });
+  </script>
+</body>
+</html>
